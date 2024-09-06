@@ -1,0 +1,80 @@
+import * as React from 'react';
+import { tagStyle } from 'constants/tags'
+
+# Hello
+
+<span style={tagStyle("Seguridad")}>Seguridad</span>
+<span style={tagStyle("Funcional")}>Funcional</span>
+
+Esto es una prueba
+
+## Alcance 
+
+Este documento establece especificaciones de interfaz para la implementación de una licencia de conducir en
+asociación con un dispositivo móvil. Este documento especifica la interfaz entre el mDL y el lector
+de mDL, y la interfaz entre el lector de mDL y la infraestructura de la autoridad emisora. Este
+documento también permite a partes distintas de la autoridad emisora (por ejemplo, otras autoridades emisoras o
+verificadores de mDL en otros países):
+- Usar una máquina para obtener los datos del mDL;
+- Vincular el mDL al titular del mDL;
+- Autenticar el origen de los datos del mDL;
+- Verificar la integridad de los datos del mDL.
+
+Los siguientes elementos están fuera del alcance de este documento:
+- Cómo se obtiene el consentimiento del titular del mDL para compartir datos;
+- Requisitos sobre el almacenamiento de datos del mDL y claves privadas del mDL.
+
+## Definiciones
+
+| Término | Definición |
+|---------|------------|
+| dispositivo móvil | Dispositivo informático portátil que al menos: <br/>— tiene un factor de forma pequeño para que pueda ser fácilmente transportado por una sola persona; <br/>— está diseñado para operar, transmitir y recibir información sin conexión por cable; <br/>— posee almacenamiento de datos local, no extraíble o extraíble; <br/>— incluye una fuente de alimentación autónoma; <br/>— incluye una pantalla; <br/>— incluye un medio para que el titular del dispositivo informático portátil interactúe con el dispositivo <br/>Nota 1: Adaptado de NIST SP 800-157. |
+| mdoc | Documento o aplicación que reside en un dispositivo móvil o requiere un dispositivo móvil como parte del proceso para acceder al documento o aplicación |
+| lector de mdoc | Dispositivo que puede recuperar datos de mdoc con fines de verificación |
+| titular de mdoc | Individuo a quien se le emite un mdoc |
+| verificador de mdoc | Persona u organización que usa y/o controla un lector de mdoc para verificar un mdoc |
+| mDL | Licencia de conducir que cumple al menos la misma función que una IDL pero, en lugar de ser en papel o plástico, es un mdoc <br/>Nota 1: La licencia de conducir conforme a ISO (IDL) se define en ISO/IEC 18013-1. |
+| lector de mDL | Lector de mdoc que puede recuperar datos de mDL |
+| titular de mDL | Individuo a quien se le emite un mDL, es decir, el titular legítimo de los privilegios de conducir reflejados en un mDL |
+| verificador de mDL | Persona u organización que usa y/o controla un lector de mDL para verificar un mDL |
+| autoridad de licencias | Organización agente autorizada que emite una licencia de conducir <br/>EJEMPLO Ministerio de Transporte, Departamento de Vehículos Motorizados o Agencia de Policía nacional, federal, estatal, provincial, regional, territorial o local. |
+| país emisor | País que emitió la licencia de conducir o dentro del cual se encuentra la autoridad de licencias |
+| autoridad emisora | Autoridad de licencias, o país emisor si no se han autorizado autoridades de licencias separadas |
+| infraestructura de la autoridad emisora | Infraestructura bajo el control de la autoridad emisora |
+| CA de la autoridad emisora | Autoridad de certificación operada por o en nombre de una autoridad emisora |
+| recuperación del dispositivo | Método de recuperación de datos que utiliza exclusivamente la interfaz entre el mdoc y el lector de mdoc |
+| recuperación del servidor | Método de recuperación de datos que utiliza la interfaz entre el lector de mdoc y la infraestructura de la autoridad emisora |
+| token de recuperación del servidor | Token que identifica al titular del mdoc y el mdoc ante la autoridad emisora |
+| modo PCD | Modo en el que un dispositivo móvil habilitado para NFC opera como un PCD |
+| modo PICC | Modo en el que un dispositivo móvil habilitado para NFC opera como un PICC |
+
+
+## Visión general
+
+La Figura 1 muestra las interfaces dentro del alcance de este documento. La explicación de cada interfaz es la siguiente:
+
+- **Interfaz 1** Es la interfaz entre la infraestructura de la autoridad emisora y el mDL. Esta interfaz está fuera del alcance de este documento.
+
+- **Interfaz 2** Es la interfaz entre el mDL y el lector de mDL. Esta interfaz se especifica en este documento. La interfaz puede utilizarse para la configuración de la conexión y para el método de recuperación del dispositivo.
+
+- **Interfaz 3** Es la interfaz entre la infraestructura de la autoridad emisora y el lector de mDL. Esta interfaz se especifica en este documento. La interfaz puede utilizarse para el método de recuperación del servidor.
+<br/>
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+  ![Interfaces mDL](pages/images/mDL_interfaces.png)
+</div>
+
+<span style={tagStyle("Funcional")}>Funcional</span>
+## Requisitos funcionales
+
+Los requisitos funcionales incluyen al menos lo siguiente:
+
+a) Un verificador de mDL junto con un lector de mDL deberá ser capaz de solicitar, recibir y verificar la integridad y autenticidad de un mDL, ya sea que haya conectividad en línea o no para el mDL o el lector de mDL.
+
+b) Un verificador de mDL no asociado con la autoridad emisora deberá ser capaz de verificar la integridad y autenticidad de un mDL.
+
+c) Un verificador de mDL deberá estar habilitado para confirmar la vinculación entre la persona que presenta el mDL y el titular del mDL.
+
+d) La interfaz entre el mDL y el lector de mDL deberá soportar la divulgación selectiva de datos del mDL a un lector de mDL.
+
+##Requisitos técnicos
+
