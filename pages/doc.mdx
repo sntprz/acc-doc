@@ -76,5 +76,27 @@ Los requisitos funcionales incluyen al menos lo siguiente:
 
 #### Modelo de datos
 
-The mDL data is organized as individual data elements which can be requested and returned
-independently from each other.
+Los datos del mDL están organizados como elementos de datos individuales que pueden solicitarse y devolverse de forma independiente entre sí. 
+Los conceptos utilizados en este documento han sido diseñados de manera que otras credenciales móviles, por ejemplo, identidad u otras credenciales que sustituyan los datos del mDL por un conjunto diferente de elementos de datos, también puedan hacer uso de los protocolos de compromiso y recuperación descritos en este documento.
+
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+  ![mDoc Data Model](pages/images/mdoc_data_model.png)
+</div>
+
+#### Intercambio de datos
+
+El intercambio de datos se divide en tres fases: la fase de inicialización, la fase de compromiso del dispositivo y
+la fase de recuperación de datos. Después de la inicialización entre el mDL y el lector
+de mDL se distinguen tres flujos de transacción diferentes:
+- Compromiso del dispositivo, seguido del intercambio de datos mediante recuperación del dispositivo entre el mDL y el
+lector de mDL.
+- Compromiso del dispositivo, seguido del intercambio de información de recuperación del servidor mediante recuperación del dispositivo
+entre el mDL y el lector de mDL, seguido del intercambio de datos mediante recuperación del servidor entre
+el lector de mDL y la infraestructura de la autoridad emisora.
+- Compromiso del dispositivo, seguido del intercambio de datos mediante recuperación del servidor entre el lector de mDL
+y la infraestructura de la autoridad emisora.
+
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+  ![mDoc Transaction Flow](pages/images/mdl_transaction_flow.png)
+</div>
+
