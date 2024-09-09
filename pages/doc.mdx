@@ -1,12 +1,8 @@
 import * as React from 'react';
 import { tagStyle } from 'constants/tags'
 
-# Hello
-
 <span style={tagStyle("Seguridad")}>Seguridad</span>
 <span style={tagStyle("Funcional")}>Funcional</span>
-
-Esto es una prueba
 
 ## Alcance 
 
@@ -64,17 +60,21 @@ La Figura 1 muestra las interfaces dentro del alcance de este documento. La expl
 </div>
 
 <span style={tagStyle("Funcional")}>Funcional</span>
-## Requisitos funcionales
+### Requisitos funcionales
 
 Los requisitos funcionales incluyen al menos lo siguiente:
 
-a) Un verificador de mDL junto con un lector de mDL deberá ser capaz de solicitar, recibir y verificar la integridad y autenticidad de un mDL, ya sea que haya conectividad en línea o no para el mDL o el lector de mDL.
+1. Un verificador de mDL junto con un lector de mDL deberá ser capaz de solicitar, recibir y verificar la integridad y autenticidad de un mDL, ya sea que haya conectividad en línea o no para el mDL o el lector de mDL.
 
-b) Un verificador de mDL no asociado con la autoridad emisora deberá ser capaz de verificar la integridad y autenticidad de un mDL.
+2. Un verificador de mDL no asociado con la autoridad emisora deberá ser capaz de verificar la integridad y autenticidad de un mDL.
 
-c) Un verificador de mDL deberá estar habilitado para confirmar la vinculación entre la persona que presenta el mDL y el titular del mDL.
+3. Un verificador de mDL deberá estar habilitado para confirmar la vinculación entre la persona que presenta el mDL y el titular del mDL.
 
-d) La interfaz entre el mDL y el lector de mDL deberá soportar la divulgación selectiva de datos del mDL a un lector de mDL.
+4. La interfaz entre el mDL y el lector de mDL deberá soportar la divulgación selectiva de datos del mDL a un lector de mDL.
 
-##Requisitos técnicos
+### Requisitos técnicos
 
+#### Modelo de datos
+
+The mDL data is organized as individual data elements which can be requested and returned
+independently from each other.
